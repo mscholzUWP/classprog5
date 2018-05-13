@@ -9,12 +9,12 @@
  * @author scholzm
  */
 public abstract class Account {
-    protected static int totalAccountNumber = 0;
-    public abstract float getAccountBalance();
-    
-    
-    public boolean compareTo()
-    {
-        
-    }
+   protected static int totalAccountNumber = 0;
+   public abstract float getAccountBalance();
+
+
+   public boolean compareTo()
+   {
+
+   }
 }

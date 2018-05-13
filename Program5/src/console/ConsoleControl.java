@@ -50,19 +50,18 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-        ScannerInputByFile("test_input.txt");
-       while(stdin.hasNext())
-       {
-        String cmd = stdin.next().trim();// get rid of spaces and newline 
+      ScannerInputByFile("test_input.txt");
+      System.out.println("Banking System is running...!");
+      while(stdin.hasNext())
+      {
+      String cmd = stdin.next().trim();// get rid of spaces and newline 
 
-        switch (cmd.toupper()) {
-            case "Q":
-                break;
-            default:
-                break;
-          
-       }
-       
+      switch (cmd.toupper()) {
+         case "Q":
+            break;
+         default:
+            break;
+       } 
    }
    
     

@@ -8,11 +8,16 @@
  *
  * @author scholzm
  */
-public class CheckingAcount {
+public class CheckingAcount extends Account{
     
-    public CheckingAcount(int id)
-    {
-        
-    }
+   public CheckingAcount(int id)
+   {
+
+   }
+   
+   public float getAccountBalance()
+   {
+      
+   }
     
 }
