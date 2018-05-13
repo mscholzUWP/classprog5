@@ -5,6 +5,8 @@
  */
 package console;
 
+import BankAccountManagement;
+import SSNum;
 import java.io.File;
 import java.util.Scanner;
 import java.util.StringTokenizer;
@@ -16,7 +18,7 @@ import java.util.StringTokenizer;
 public class ConsoleControl {
     private Scanner stdin;
     
-    public ConsoleControl()
+    public ConsoleControl(BankAccountManagement manager)
     {
         stdin = new Scanner (System.in); 
     }
@@ -48,22 +50,70 @@ public class ConsoleControl {
       }
    }
    
+   private void createaccount(Scanner stdin)
+   {
+      System.out.println("Please enter the name of the customer:");
+      
+      System.out.println("Please enter the SSN of the customer (***-**-****):");
+      
+      System.out.println("Please select account type: 1.Savings, 2.Checking");
+      
+      System.out.println("Please enter account number with five digits:");
+      
+      
+      addAccount(String name, SSNum ssn, int type, int accountNum)
+      
+      
+      
+      System.out.println("The new account has been created. Account summary:");
+      System.out.println(String.format(
+            "Account holder is %s; Account number is %n; Account type is %s;"
+            account.name(), account.number, account.type)));
+      
+      System.out.println(String.format(
+            "Account balance is %f", account.getAccountBalance()));
+   }
+   
+   private void manageaccount(Scanner stdin)
+   {
+    
+                              
+   }
+      
+   private void listaccounts(Scanner stdin)
+   {
+
+   }
+   
    public void runConsole()
    {
       ScannerInputByFile("test_input.txt");
       System.out.println("Banking System is running...!");
+      
       while(stdin.hasNext())
       {
+         System.out.println(
+               "Please enter C to create a new account, "
+               + "M to manage an existing account, "
+               + "L to list all account in the order by "
+               + "balance from lowest to highest, "
+               + "Q to quit");
+      
       String cmd = stdin.next().trim();// get rid of spaces and newline 
 
       switch (cmd.toupper()) {
+         case "C":
+            break;
+         case "M":
+            break;
+         case "L":
+            break;
          case "Q":
             break;
          default:
+            System.out.println("bad command");
             break;
-       } 
-   }
-   
-    
-    
+         } 
+      }
+   }  
 }

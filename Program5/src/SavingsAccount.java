@@ -8,12 +8,20 @@
  *
  * @author scholzm
  */
-public class SavingsAccount {
-    
-    
-    public SavingsAccount(int id)
-    {
-        
-    }
-    
+public class SavingsAccount extends Account{
+   
+   public SavingsAccount(int id)
+   {
+
+   }
+   
+   public float getAccountBalance()
+   {
+      
+   }
+   
+   public void accrueIntrest()
+   {
+      
+   }
 }

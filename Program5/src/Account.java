@@ -12,6 +12,10 @@ public abstract class Account {
    protected static int totalAccountNumber = 0;
    public abstract float getAccountBalance();
 
+   public Account()
+   {
+      totalAccountNumber++;
+   }
 
    public boolean compareTo()
    {

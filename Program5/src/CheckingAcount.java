@@ -12,12 +12,12 @@ public class CheckingAcount extends Account{
     
    public CheckingAcount(int id)
    {
-
+      super();
    }
    
    public float getAccountBalance()
    {
-      
+
    }
     
 }
