@@ -1,0 +1,578 @@
+Below is a partial list of results.  See your email for more details.
+********************************************************************
+Results for Dataset 1
+Differences: 67
+There were 67 differences between your output and the correct output.
+
+Below is Your Output, with line numbers added:
+
+   1: m
+   2: L
+   3: c
+   4: Tom
+   5: 123-45-6789
+   6: 1
+   7: 11111
+   8: m
+   9: 11111
+  10: 1
+  11: m
+  12: 11111
+  13: 2
+  14: m
+  15: 11111
+  16: 3
+  17: 500
+  18: m
+  19: 11111
+  20: 2
+  21: 200
+  22: L
+  23: L
+  24: q
+  25: 
+  26: Exception in thread "main" java.util.NoSuchElementException: No line found
+  27: 	at java.util.Scanner.nextLine(Scanner.java:1540)
+  28: 	at Echo.run(Echo.java:12)
+  29: 	at Prog5.main(Prog5.java:21)
+**********************************************************
+
+Below is the Correct Output, with line numbers added:
+
+   1: Banking System is running...!
+   2: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   3: The number of accounts is 0. Please create an account first.
+   4: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   5: The total number of accounts is 0
+   6: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   7: Please enter the name of the customer:
+   8: Please enter the SSN of the customer (***-**-****):
+   9: Please select account type: 1.Savings, 2.Checking
+  10: Please enter account number with five digits:
+  11: The new account has been created. Account summary:
+  12: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+  13: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  14: Please enter your account number:
+  15: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  16: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+  17: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  18: Please enter your account number:
+  19: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  20: The balance is 0.0, Please deposit before withdraw.
+  21: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  22: Please enter your account number:
+  23: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  24: Please enter the amount of money:
+  25: Your deposit has been received with an amount of 500
+  26: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  27: Please enter your account number:
+  28: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  29: Please enter the amount of money:
+  30: Your withdrawal has been accepted with an amount of 200
+  31: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  32: The total number of accounts is 1
+  33: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 301.5
+  34: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  35: The total number of accounts is 1
+  36: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 303.02
+  37: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  38: Thanks for using Banking System. Bye!
+**********************************************************
+
+Below is how to change your output to the correct output, with the required changes numbered:
+
+Insert after Line 0: Banking System is running...!
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The number of accounts is 0. Please create an account first.
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter the name of the customer:
+Insert after Line 0: Please enter the SSN of the customer (***-**-****):
+Insert after Line 0: Please select account type: 1.Savings, 2.Checking
+Insert after Line 0: Please enter account number with five digits:
+Insert after Line 0: The new account has been created. Account summary:
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: The balance is 0.0, Please deposit before withdraw.
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: Your deposit has been received with an amount of 500
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: Your withdrawal has been accepted with an amount of 200
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 1
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 301.5
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 1
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 303.02
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Thanks for using Banking System. Bye!
+Delete Line       1: m
+Delete Line       2: L
+Delete Line       3: c
+Delete Line       4: Tom
+Delete Line       5: 123-45-6789
+Delete Line       6: 1
+Delete Line       7: 11111
+Delete Line       8: m
+Delete Line       9: 11111
+Delete Line       10: 1
+Delete Line       11: m
+Delete Line       12: 11111
+Delete Line       13: 2
+Delete Line       14: m
+Delete Line       15: 11111
+Delete Line       16: 3
+Delete Line       17: 500
+Delete Line       18: m
+Delete Line       19: 11111
+Delete Line       20: 2
+Delete Line       21: 200
+Delete Line       22: L
+Delete Line       23: L
+Delete Line       24: q
+Delete Line       25: 
+Delete Line       26: Exception in thread "main" java.util.NoSuchElementException: No line found
+Delete Line       27: 	at java.util.Scanner.nextLine(Scanner.java:1540)
+Delete Line       28: 	at Echo.run(Echo.java:12)
+Delete Line       29: 	at Prog5.main(Prog5.java:21)
+
+**********************************************************
+********************************************************************
+Results for Dataset 2
+Differences: 90
+There were 90 differences between your output and the correct output.
+
+Below is Your Output, with line numbers added:
+
+   1: c
+   2: Tom
+   3: 123-45-6789
+   4: 1
+   5: 11111
+   6: L
+   7: m
+   8: 11111
+   9: 3
+  10: 123.45
+  11: L
+  12: c
+  13: Jerry
+  14: 123-45-5555
+  15: 2
+  16: 22222
+  17: m
+  18: 22222
+  19: 3
+  20: 67.8
+  21: L
+  22: c
+  23: Lily
+  24: 123-45-1111
+  25: 1
+  26: 33333
+  27: m
+  28: 33333
+  29: 3
+  30: 80
+  31: L
+  32: q
+  33: Exception in thread "main" java.util.NoSuchElementException: No line found
+  34: 	at java.util.Scanner.nextLine(Scanner.java:1540)
+  35: 	at Echo.run(Echo.java:12)
+  36: 	at Prog5.main(Prog5.java:21)
+**********************************************************
+
+Below is the Correct Output, with line numbers added:
+
+   1: Banking System is running...!
+   2: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   3: Please enter the name of the customer:
+   4: Please enter the SSN of the customer (***-**-****):
+   5: Please select account type: 1.Savings, 2.Checking
+   6: Please enter account number with five digits:
+   7: The new account has been created. Account summary:
+   8: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+   9: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  10: The total number of accounts is 1
+  11: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+  12: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  13: Please enter your account number:
+  14: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  15: Please enter the amount of money:
+  16: Your deposit has been received with an amount of 123.45
+  17: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  18: The total number of accounts is 1
+  19: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 124.07
+  20: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  21: Please enter the name of the customer:
+  22: Please enter the SSN of the customer (***-**-****):
+  23: Please select account type: 1.Savings, 2.Checking
+  24: Please enter account number with five digits:
+  25: The new account has been created. Account summary:
+  26: Account holder is Jerry; Account number is 22222; Account type is checking; Account balance is 0
+  27: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  28: Please enter your account number:
+  29: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  30: Please enter the amount of money:
+  31: Your deposit has been received with an amount of 67.8
+  32: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  33: The total number of accounts is 2
+  34: Account holder is Jerry; Account number is 22222; Account type is checking; Account balance is 67.8
+  35: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 124.69
+  36: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  37: Please enter the name of the customer:
+  38: Please enter the SSN of the customer (***-**-****):
+  39: Please select account type: 1.Savings, 2.Checking
+  40: Please enter account number with five digits:
+  41: The new account has been created. Account summary:
+  42: Account holder is Lily; Account number is 33333; Account type is savings; Account balance is 0
+  43: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  44: Please enter your account number:
+  45: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  46: Please enter the amount of money:
+  47: Your deposit has been received with an amount of 80
+  48: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  49: The total number of accounts is 3
+  50: Account holder is Jerry; Account number is 22222; Account type is checking; Account balance is 67.8
+  51: Account holder is Lily; Account number is 33333; Account type is savings; Account balance is 80.4
+  52: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 125.32
+  53: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  54: Thanks for using Banking System. Bye!
+**********************************************************
+
+Below is how to change your output to the correct output, with the required changes numbered:
+
+Insert after Line 0: Banking System is running...!
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter the name of the customer:
+Insert after Line 0: Please enter the SSN of the customer (***-**-****):
+Insert after Line 0: Please select account type: 1.Savings, 2.Checking
+Insert after Line 0: Please enter account number with five digits:
+Insert after Line 0: The new account has been created. Account summary:
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 1
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: Your deposit has been received with an amount of 123.45
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 1
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 124.07
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter the name of the customer:
+Insert after Line 0: Please enter the SSN of the customer (***-**-****):
+Insert after Line 0: Please select account type: 1.Savings, 2.Checking
+Insert after Line 0: Please enter account number with five digits:
+Insert after Line 0: The new account has been created. Account summary:
+Insert after Line 0: Account holder is Jerry; Account number is 22222; Account type is checking; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: Your deposit has been received with an amount of 67.8
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 2
+Insert after Line 0: Account holder is Jerry; Account number is 22222; Account type is checking; Account balance is 67.8
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 124.69
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter the name of the customer:
+Insert after Line 0: Please enter the SSN of the customer (***-**-****):
+Insert after Line 0: Please select account type: 1.Savings, 2.Checking
+Insert after Line 0: Please enter account number with five digits:
+Insert after Line 0: The new account has been created. Account summary:
+Insert after Line 0: Account holder is Lily; Account number is 33333; Account type is savings; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: Your deposit has been received with an amount of 80
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 3
+Insert after Line 0: Account holder is Jerry; Account number is 22222; Account type is checking; Account balance is 67.8
+Insert after Line 0: Account holder is Lily; Account number is 33333; Account type is savings; Account balance is 80.4
+Insert after Line 0: Account holder is Tom; Account number is 11111; Account type is savings; Account balance is 125.32
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Thanks for using Banking System. Bye!
+Delete Line       1: c
+Delete Line       2: Tom
+Delete Line       3: 123-45-6789
+Delete Line       4: 1
+Delete Line       5: 11111
+Delete Line       6: L
+Delete Line       7: m
+Delete Line       8: 11111
+Delete Line       9: 3
+Delete Line       10: 123.45
+Delete Line       11: L
+Delete Line       12: c
+Delete Line       13: Jerry
+Delete Line       14: 123-45-5555
+Delete Line       15: 2
+Delete Line       16: 22222
+Delete Line       17: m
+Delete Line       18: 22222
+Delete Line       19: 3
+Delete Line       20: 67.8
+Delete Line       21: L
+Delete Line       22: c
+Delete Line       23: Lily
+Delete Line       24: 123-45-1111
+Delete Line       25: 1
+Delete Line       26: 33333
+Delete Line       27: m
+Delete Line       28: 33333
+Delete Line       29: 3
+Delete Line       30: 80
+Delete Line       31: L
+Delete Line       32: q
+Delete Line       33: Exception in thread "main" java.util.NoSuchElementException: No line found
+Delete Line       34: 	at java.util.Scanner.nextLine(Scanner.java:1540)
+Delete Line       35: 	at Echo.run(Echo.java:12)
+Delete Line       36: 	at Prog5.main(Prog5.java:21)
+
+**********************************************************
+********************************************************************
+Results for Dataset 3
+Differences: 103
+There were 103 differences between your output and the correct output.
+
+Below is Your Output, with line numbers added:
+
+   1: m
+   2: L
+   3: c
+   4: Ben
+   5: 1234
+   6: abcde
+   7: 12345678901
+   8: 123-45u7890
+   9: 123-45-678a
+  10: 123-45-6789
+  11: b
+  12: -2
+  13: 10
+  14: a
+  15: 1
+  16: 123
+  17: abc
+  18: abcde
+  19: 1234g
+  20: 12345
+  21: m
+  22: 123
+  23: abc
+  24: 12333
+  25: 12345
+  26: 2
+  27: 12345
+  28: m
+  29: 12345
+  30: 3
+  31: abc
+  32: 12.23456
+  33: m
+  34: 12345
+  35: 2
+  36: 300
+  37: m
+  38: 12345
+  39: -2
+  40: abc
+  41: 4
+  42: q
+  43: Exception in thread "main" java.util.NoSuchElementException: No line found
+  44: 	at java.util.Scanner.nextLine(Scanner.java:1540)
+  45: 	at Echo.run(Echo.java:12)
+  46: 	at Prog5.main(Prog5.java:21)
+**********************************************************
+
+Below is the Correct Output, with line numbers added:
+
+   1: Banking System is running...!
+   2: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   3: The number of accounts is 0. Please create an account first.
+   4: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   5: The total number of accounts is 0
+   6: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+   7: Please enter the name of the customer:
+   8: Please enter the SSN of the customer (***-**-****):
+   9: Invalid Social Security Number. java.lang.IllegalArgumentException: The length of ssn has to be 11.
+  10: Please enter valid SSN:
+  11: Invalid Social Security Number. java.lang.IllegalArgumentException: The length of ssn has to be 11.
+  12: Please enter valid SSN:
+  13: Invalid Social Security Number. java.lang.IllegalArgumentException: wrong format
+  14: Please enter valid SSN:
+  15: Invalid Social Security Number. java.lang.IllegalArgumentException: wrong format
+  16: Please enter valid SSN:
+  17: Invalid Social Security Number. java.lang.IllegalArgumentException: wrong format
+  18: Please enter valid SSN:
+  19: Please select account type: 1.Savings, 2.Checking
+  20: Invalid Input. java.util.InputMismatchException Please try again
+  21: Invalid type. Please try again
+  22: Invalid type. Please try again
+  23: Invalid Input. java.util.InputMismatchException Please try again
+  24: Please enter account number with five digits:
+  25: Invalid account number. Please try again
+  26: Invalid Input. java.util.InputMismatchException Please try again
+  27: Invalid Input. java.util.InputMismatchException Please try again
+  28: Invalid Input. java.util.InputMismatchException Please try again
+  29: The new account has been created. Account summary:
+  30: Account holder is Ben; Account number is 12345; Account type is savings; Account balance is 0
+  31: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  32: Please enter your account number:
+  33: Invalid number. Please try again
+  34: Invalid Input. java.util.InputMismatchException Please try again
+  35: The account number you entered does not exist. Please try again
+  36: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  37: The balance is 0.0, Please deposit before withdraw.
+  38: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  39: Invalid command.
+  40: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  41: Please enter your account number:
+  42: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  43: Please enter the amount of money:
+  44: Invalid Input. java.util.InputMismatchException Please try again
+  45: Your deposit has been received with an amount of 12.23
+  46: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  47: Please enter your account number:
+  48: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  49: Please enter the amount of money:
+  50: You don't have enough balance. Please try a different amount.
+  51: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  52: Please enter your account number:
+  53: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+  54: Invalid type. Please try again
+  55: Invalid Input. java.util.InputMismatchException Please try again
+  56: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+  57: Thanks for using Banking System. Bye!
+**********************************************************
+
+Below is how to change your output to the correct output, with the required changes numbered:
+
+Insert after Line 0: Banking System is running...!
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The number of accounts is 0. Please create an account first.
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: The total number of accounts is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter the name of the customer:
+Insert after Line 0: Please enter the SSN of the customer (***-**-****):
+Insert after Line 0: Invalid Social Security Number. java.lang.IllegalArgumentException: The length of ssn has to be 11.
+Insert after Line 0: Please enter valid SSN:
+Insert after Line 0: Invalid Social Security Number. java.lang.IllegalArgumentException: The length of ssn has to be 11.
+Insert after Line 0: Please enter valid SSN:
+Insert after Line 0: Invalid Social Security Number. java.lang.IllegalArgumentException: wrong format
+Insert after Line 0: Please enter valid SSN:
+Insert after Line 0: Invalid Social Security Number. java.lang.IllegalArgumentException: wrong format
+Insert after Line 0: Please enter valid SSN:
+Insert after Line 0: Invalid Social Security Number. java.lang.IllegalArgumentException: wrong format
+Insert after Line 0: Please enter valid SSN:
+Insert after Line 0: Please select account type: 1.Savings, 2.Checking
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: Invalid type. Please try again
+Insert after Line 0: Invalid type. Please try again
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: Please enter account number with five digits:
+Insert after Line 0: Invalid account number. Please try again
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: The new account has been created. Account summary:
+Insert after Line 0: Account holder is Ben; Account number is 12345; Account type is savings; Account balance is 0
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Invalid number. Please try again
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: The account number you entered does not exist. Please try again
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: The balance is 0.0, Please deposit before withdraw.
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Invalid command.
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: Your deposit has been received with an amount of 12.23
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Please enter the amount of money:
+Insert after Line 0: You don't have enough balance. Please try a different amount.
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Please enter your account number:
+Insert after Line 0: Please select account type: 1.View account summary, 2.Withdraw, 3.Deposit, 4.Main menu
+Insert after Line 0: Invalid type. Please try again
+Insert after Line 0: Invalid Input. java.util.InputMismatchException Please try again
+Insert after Line 0: Please enter C to create a new account, M to manage an existing account, L to list all account in the order by balance from lowest to highest, Q to quit
+Insert after Line 0: Thanks for using Banking System. Bye!
+Delete Line       1: m
+Delete Line       2: L
+Delete Line       3: c
+Delete Line       4: Ben
+Delete Line       5: 1234
+Delete Line       6: abcde
+Delete Line       7: 12345678901
+Delete Line       8: 123-45u7890
+Delete Line       9: 123-45-678a
+Delete Line       10: 123-45-6789
+Delete Line       11: b
+Delete Line       12: -2
+Delete Line       13: 10
+Delete Line       14: a
+Delete Line       15: 1
+Delete Line       16: 123
+Delete Line       17: abc
+Delete Line       18: abcde
+Delete Line       19: 1234g
+Delete Line       20: 12345
+Delete Line       21: m
+Delete Line       22: 123
+Delete Line       23: abc
+Delete Line       24: 12333
+Delete Line       25: 12345
+Delete Line       26: 2
+Delete Line       27: 12345
+Delete Line       28: m
+Delete Line       29: 12345
+Delete Line       30: 3
+Delete Line       31: abc
+Delete Line       32: 12.23456
+Delete Line       33: m
+Delete Line       34: 12345
+Delete Line       35: 2
+Delete Line       36: 300
+Delete Line       37: m
+Delete Line       38: 12345
+Delete Line       39: -2
+Delete Line       40: abc
+Delete Line       41: 4
+Delete Line       42: q
+Delete Line       43: Exception in thread "main" java.util.NoSuchElementException: No line found
+Delete Line       44: 	at java.util.Scanner.nextLine(Scanner.java:1540)
+Delete Line       45: 	at Echo.run(Echo.java:12)
+Delete Line       46: 	at Prog5.main(Prog5.java:21)
+
+**********************************************************
+
+
+********************************************************
+Below is the output from the Compiler:
+
+
