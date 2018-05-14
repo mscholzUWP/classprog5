@@ -1,3 +1,5 @@
+package main;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +17,7 @@ public class SavingsAccount extends Account{
    public SavingsAccount(int id)
    {
       super();
-      type = "savings";
+      type = SAVINGS;
    }
    
    public float getAccountBalance()
@@ -28,4 +30,6 @@ public class SavingsAccount extends Account{
       balance = balance + balance*annualInterestRate;
       return balance; // could be very wrong
    }
+   
+   //public String getAccountSummary()
 }

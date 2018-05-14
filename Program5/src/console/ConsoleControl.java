@@ -5,23 +5,26 @@
  */
 package console;
 
-import BankAccountManagement;
-import SSNum;
+import main.BankAccountManagement;
+import main.SSNum;
 import java.io.File;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.ArrayList;
 
 /**
  *
  * @author scholzm
  */
 public class ConsoleControl {
-    private Scanner stdin;
+   private Scanner stdin;
+   BankAccountManagement bankdata;
     
-    public ConsoleControl(BankAccountManagement manager)
-    {
-        stdin = new Scanner (System.in);
-    }
+   public ConsoleControl(BankAccountManagement data)
+   {
+      this.bankdata = data;
+      stdin = new Scanner (System.in);
+   }
     
     /**
    replaces keyboard input scanner with file input for testing
@@ -52,16 +55,28 @@ public class ConsoleControl {
    
    private void createaccount(Scanner stdin)
    {
-      System.out.println("Please enter the name of the customer:");
-      String name = stdin.nextLine();
-      System.out.println("Please enter the SSN of the customer (***-**-****):");
-      SSNum ssn = new SSNum(stdin.nextLine());
-      System.out.println("Please select account type: 1.Savings, 2.Checking");
-      
-      System.out.println("Please enter account number with five digits:");
-      
-      
-      addAccount(String name, SSNum ssn, int type, int accountNum);
+      try
+      {
+         System.out.println("Please enter the name of the customer:");
+         String name = stdin.nextLine();
+
+         System.out.println("Please enter the SSN of the customer (***-**-****):");
+         SSNum ssn = new SSNum(stdin.nextLine());
+
+         System.out.println("Please select account type: 1.Savings, 2.Checking");
+         int type = Integer.parseInt(stdin.nextLine());
+         if (type != 1 && type != 2){throw new IllegalArgumentException();}
+
+         System.out.println("Please enter account number with five digits:");
+         int accountNum = Integer.parseInt(stdin.nextLine());
+         
+      } 
+      catch(java.util.InputMismatchException e)
+      {
+            
+      }
+
+      addAccount(name, ssn, type, accountNum);
       
       
       System.out.println("The new account has been created. Account summary:");
@@ -78,6 +93,12 @@ public class ConsoleControl {
    
    private void manageaccount(Scanner stdin)
    {
+      if (bankdata.numAccounts() == 0)
+      {
+         System.out.println("The number of accounts is 0. Please create an account first.");
+         return;
+      }
+      
       System.out.println("Please select account type: "
             + "1.View account summary, "
             + "2.Withdraw, 3.Deposit, "
@@ -87,14 +108,16 @@ public class ConsoleControl {
       
    private void listaccounts(Scanner stdin)
    {
+      int numaccounts = bankdata.numAccounts();
       System.out.println("The total number of accounts is " + numaccounts);
+      ArrayList accounts = bankdata.sortAccounts();
 //      for(account in accounts
 //         print account summary
    }
    
    public void runConsole()
    {
-      ScannerInputByFile("test_input.txt");
+      ScannerInputByFile("testinput1.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())
@@ -110,15 +133,19 @@ public class ConsoleControl {
 
       switch (cmd.toUpperCase()) {
          case "C":
+               createaccount(stdin);
             break;
          case "M":
+            manageaccount(stdin);
             break;
          case "L":
+            listaccounts(stdin);
             break;
          case "Q":
+            System.out.println("Thanks for using Banking System. Bye!");
             break;
          default:
-            System.out.println("bad command");
+            System.out.println("bad command" + cmd);
             break;
          } 
       }

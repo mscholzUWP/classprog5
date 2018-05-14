@@ -15,7 +15,7 @@ public class CheckingAcount extends Account{
    public CheckingAcount(int id)
    {
       super();
-      type = "checking";
+      type = CHECKING;
    }
    
    //@override
@@ -23,4 +23,6 @@ public class CheckingAcount extends Account{
    {
       return balance;
    }
+   
+   //public String getAccountSummary()
 }

@@ -20,7 +20,7 @@ public class Prog5
    public static void main(String[] args)
    {
       // TODO code application logic here
-      BankAccountManagement bank = new BankAccountManagement();
+      main.BankAccountManagement bank = new main.BankAccountManagement();
       bank.run();     
    }  
 }

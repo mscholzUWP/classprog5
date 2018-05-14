@@ -10,11 +10,11 @@ package main;
  *
  * @author scholzm
  */
-public abstract class Account {
+public abstract class Account implements Comparable{
    protected static int totalAccountNumber = 0;
    protected int accountNum;
    protected String holdername;
-   protected String type;          
+   //protected enum accType {CHECKING("checking"), SAVINGS("savings");}
    protected float balance;
    
    
@@ -41,14 +41,33 @@ public abstract class Account {
       balance += amount;
       return true; // can this ever be false?
    }
+//   private String typestr()
+//   {
+//      if 
+//   }
 
    // comperable interface
-   public boolean compareTo(Account test)
+   public int compareTo(Account test)
    {
-      return false;
+      if(test == null)
+      {
+         throw new NullPointerException("test is null");
+      }
+      //if (test instanceof Account)
+      
+      if (this.balance == test.balance )
+         return 0; 
+      
+      if (this.balance > test.balance )
+         return 1; 
+      
+      if (this.balance < test.balance )
+         return -1; 
+      
+      throw new NullPointerException("not greater,equal,lessthan");
    }
    
-   String getAccountSummary()
+   public String getAccountSummary()
    {
       //return String.format("");
       String summary = "";
