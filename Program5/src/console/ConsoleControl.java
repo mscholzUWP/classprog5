@@ -11,6 +11,9 @@ import java.io.File;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
+import java.util.Iterator;
+import main.Account;
+import main.Customer;
 
 /**
  *
@@ -95,6 +98,39 @@ public class ConsoleControl {
       System.out.println(added.getAccountSummary());
    }
    
+   private void withdraw(Scanner stdin, main.Account manacc)
+   {
+      if (manacc.getAccountBalance() == 0)
+      {
+         System.out.println("The balance is 0.0, Please deposit before withdraw.");
+         return;
+      }
+      
+      float amount =  Float.parseFloat(stdin.nextLine().trim());
+      boolean success = manacc.deposit(amount);
+      if (success)
+      {
+         System.out.println("Your withdrawal has been accepted with an amount of " + amount);
+      }else
+      {
+         System.out.println("transaction failed");
+      }
+      
+   }
+   
+   private void deposit(Scanner stdin, main.Account manacc)
+   {
+      float amount =  Float.parseFloat(stdin.nextLine().trim());
+      boolean success = manacc.deposit(amount);
+      if (success)
+      {
+         System.out.println("Your deposit has been received with an amount of " + amount);
+      }else
+      {
+         System.out.println("transaction failed");
+      }
+   }
+   
    private void manageaccount(Scanner stdin)
    {
       if (bankdata.numAccounts() == 0)
@@ -105,6 +141,8 @@ public class ConsoleControl {
       
       System.out.println("Please enter your account number:");
       int accountNumber = getAccountNuber(stdin);
+      main.Account manacc = bankdata.findAccount(accountNumber);
+      
       
       System.out.println("Please select account type: "
             + "1.View account summary, "
@@ -114,14 +152,14 @@ public class ConsoleControl {
       int cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
       switch (cmd) {
          case 1: // View account summary
-            bankdata.findAccount(accountNumber).getAccountSummary();
-            break;
+            manacc.getAccountSummary();
+            return;
          case 2: // Withdraw
-            Withdraw;
-            break;
+            withdraw(stdin, manacc);
+            return;
          case 3: // Deposit
-            deposit();
-            break;
+            deposit(stdin, manacc);
+            return;
          case 4: // Main menu
             return;
          default:
@@ -135,9 +173,14 @@ public class ConsoleControl {
    {
       int numaccounts = bankdata.numAccounts();
       System.out.println("The total number of accounts is " + numaccounts);
-      ArrayList accounts = bankdata.sortAccounts();
-//      for(account in accounts
-//         print account summary
+      ArrayList<main.Account> accounts = bankdata.sortAccounts();
+//      System.out.println(accounts);
+//      System.out.println("asize = "+accounts.size());
+      Iterator<main.Account> accitr = accounts.iterator();
+      while (accitr.hasNext()) 
+      {
+         System.out.println(accitr.next().getAccountSummary());
+      }
    }
    
    public void runConsole()
@@ -158,7 +201,7 @@ public class ConsoleControl {
 
       switch (cmd.toUpperCase()) {
          case "C":
-               createaccount(stdin);
+            createaccount(stdin);
             break;
          case "M":
             manageaccount(stdin);
