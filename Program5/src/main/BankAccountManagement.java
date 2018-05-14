@@ -7,6 +7,10 @@ package main;
  */
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+
 
 /**
  *
@@ -28,25 +32,59 @@ public class BankAccountManagement {
    public Customer createNewCustomer(String name, SSNum ssn)
    {
       // chack that customer doesn't have identical ssn retuen null;
+      if (customerlist.contains(new Customer("",ssn)))
+      {
+         return null;
+      }
       
       Customer toAdd = new Customer(name, ssn);
       customerlist.add(toAdd);
       return toAdd;
-      
    }
    
-   public Account createNewAccount(String name, SSNum ssn, int type, int accountNum)
+   public Customer findCustomer(SSNum ssn)
    {
-      // check id is not already used retuen null;
-      if (if type == CHECKING)
+      Iterator<Customer> itr = customerlist.iterator();
+      
+      while (itr.hasNext())
       {
-         Account toAdd = new CheckingAccount();
+         Customer test = itr.next();
+         if(test.equals(ssn));
+         {
+            return test;
+         }
       }
-      else if (if type == SAVINGS)
+      return null;
+   }
+   
+   public Account createNewAccount(String name, SSNum ssn, Account.AccountType type, int accountNum)
+   {
+      Customer holder = findCustomer(ssn);
+      if(holder == null)
       {
-         Account toAdd = new SavingsAccount();
+         holder = createNewCustomer(name, ssn);
       }
       
+      // check id is not already used return null; (this is why I like python dictonaries)
+      if(accountlist.contains(new CheckingAccount(accountNum)))
+      {
+         return null;
+      }
+      Account toAdd;
+      if(type == Account.AccountType.CHECKING)
+      {
+         toAdd = new  CheckingAccount(accountNum);
+      }
+      else if(type == Account.AccountType.SAVINGS)
+      {
+         toAdd = new SavingsAccount(accountNum);
+      }
+      else
+      {
+         throw java.lang.Exception("somthing went wrong");
+      }
+      
+      toAdd.setHolderName(name);
       accountlist.add(toAdd);
       
       return toAdd;

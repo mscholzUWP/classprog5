@@ -55,28 +55,36 @@ public class ConsoleControl {
    
    private void createaccount(Scanner stdin)
    {
-      try
-      {
+      String name;
+      SSNum ssn;
+      main.Account.AccountType type;
+      int accountNum;
+      
+//      try
+//      {
          System.out.println("Please enter the name of the customer:");
-         String name = stdin.nextLine();
+         name = stdin.nextLine();
+         System.out.println(name);
 
          System.out.println("Please enter the SSN of the customer (***-**-****):");
-         SSNum ssn = new SSNum(stdin.nextLine());
-
+         ssn = new SSNum(stdin.nextLine());
+         System.out.println(ssn);
+         
          System.out.println("Please select account type: 1.Savings, 2.Checking");
-         int type = Integer.parseInt(stdin.nextLine());
-         if (type != 1 && type != 2){throw new IllegalArgumentException();}
+         int typei = Integer.parseInt(stdin.nextLine());
+         if (typei != 1 && typei != 2){throw new IllegalArgumentException();}
+         type = main.Account.AccountType.values()[typei]; // convert int into enum
+         
 
          System.out.println("Please enter account number with five digits:");
-         int accountNum = Integer.parseInt(stdin.nextLine());
-         
-      } 
-      catch(java.util.InputMismatchException e)
-      {
-            
-      }
+         accountNum = Integer.parseInt(stdin.nextLine());
+//      } 
+//      catch(java.util.InputMismatchException e)
+//      {
+//            
+//      }
 
-      addAccount(name, ssn, type, accountNum);
+      bankdata.createNewAccount(name, ssn, type, accountNum);
       
       
       System.out.println("The new account has been created. Account summary:");
@@ -103,7 +111,25 @@ public class ConsoleControl {
             + "1.View account summary, "
             + "2.Withdraw, 3.Deposit, "
             + "4.Main menu");
-                              
+      
+      int cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
+      switch (cmd) {
+         case 1: // View account summary
+            printSummary();
+            break;
+         case 2: // Withdraw
+            Withdraw;
+            break;
+         case 3: // Deposit
+            deposit();
+            break;
+         case 4: // Main menu
+            return;
+         default:
+            System.out.println("bad command" + cmd);
+            break;
+      }
+      
    }
       
    private void listaccounts(Scanner stdin)
@@ -129,7 +155,7 @@ public class ConsoleControl {
                + "balance from lowest to highest, "
                + "Q to quit");
       
-      String cmd = stdin.next().trim();// get rid of spaces and newline 
+      String cmd = stdin.nextLine().trim();// get rid of spaces and newline 
 
       switch (cmd.toUpperCase()) {
          case "C":

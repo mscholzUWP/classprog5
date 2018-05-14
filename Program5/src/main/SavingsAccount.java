@@ -16,8 +16,8 @@ public class SavingsAccount extends Account{
    
    public SavingsAccount(int id)
    {
-      super();
-      type = SAVINGS;
+      super(id);
+      type = Account.AccountType.SAVINGS;
    }
    
    public float getAccountBalance()

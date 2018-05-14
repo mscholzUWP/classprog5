@@ -38,4 +38,16 @@ public class Customer {
       return null;
    }
 
+   public boolean equals(Object test)
+   { // tests if same ssn.
+      if(test instanceof Customer)
+      {
+         return (this.ssn.equals(((Customer)test).ssn));
+      }
+      if(test instanceof SSNum)
+      {
+         return (this.ssn.equals(((SSNum)test)));
+      }
+      return false;
+   }
 }

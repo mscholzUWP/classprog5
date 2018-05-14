@@ -10,12 +10,12 @@ package main;
  *
  * @author scholzm
  */
-public class CheckingAcount extends Account{
+public class CheckingAccount extends Account{
    
-   public CheckingAcount(int id)
+   public CheckingAccount(int id)
    {
-      super();
-      type = CHECKING;
+      super(id);
+      type = Account.AccountType.CHECKING;
    }
    
    //@override
