@@ -9,19 +9,23 @@
  * @author scholzm
  */
 public class SavingsAccount extends Account{
+   private float annualInterestRate = 0.01f;
+   
    
    public SavingsAccount(int id)
    {
-
+      super();
+      type = "savings";
    }
    
    public float getAccountBalance()
    {
-      
+      return balance;
    }
    
-   public void accrueIntrest()
+   public float addMonthlyInterest()
    {
-      
+      balance = balance + balance*annualInterestRate;
+      return balance; // could be very wrong
    }
 }

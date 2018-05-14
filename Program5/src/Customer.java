@@ -15,13 +15,24 @@ public class Customer {
 //            􀀬􀁗􀂶􀁖􀀃􀁌􀁏􀁏􀁈􀁊􀁄􀁏􀀃􀁗􀁒􀀃􀁋􀁄􀁙􀁈􀀃two customers with 
 //            the same SSN in the customer list.
     
-   SSNum ssn;
-   String name;
-   ArrayList<Account> accountlist;
+   private SSNum ssn;
+   private String name;
+   private ArrayList<Account> accountlist;
    
-   public Customer(int ssn)
+   public Customer(String name, SSNum ssn)
    {
-
+      this.name = name;
+      this.ssn = ssn;
+   }
+   
+   public boolean addAccount(Account toAdd)
+   {
+      return false;
+   }
+   
+   public ArrayList<Account> getAccountList()
+   {
+      return null;
    }
 
 }

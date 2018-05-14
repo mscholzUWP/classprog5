@@ -9,15 +9,16 @@
  * @author scholzm
  */
 public class CheckingAcount extends Account{
-    
+   
    public CheckingAcount(int id)
    {
       super();
+      type = "checking";
    }
    
+   //@override
    public float getAccountBalance()
    {
-
+      return balance;
    }
-    
 }
