@@ -43,13 +43,28 @@ public class BankAccountManagement {
    }
    
    public Customer findCustomer(SSNum ssn)
-   {
+   {// this should really be a hashmap.
       Iterator<Customer> itr = customerlist.iterator();
       
       while (itr.hasNext())
       {
          Customer test = itr.next();
          if(test.equals(ssn));
+         {
+            return test;
+         }
+      }
+      return null;
+   }
+   
+   public Account findAccount(int accountNum)
+   {// this should really be a hashmap.
+      Iterator<Account> itr = accountlist.iterator();
+      
+      while (itr.hasNext())
+      {
+         Account test = itr.next();
+         if(test.equals(accountNum));
          {
             return test;
          }

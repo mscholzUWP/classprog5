@@ -97,6 +97,10 @@ public abstract class Account implements Comparable{
       {
          return (this.accountNum == ((Account)test).accountNum);
       }
+      if(test instanceof Integer)
+      {
+         return (this.accountNum == ((int)test));
+      }
       return false;
    }
    
@@ -105,11 +109,9 @@ public abstract class Account implements Comparable{
       //return String.format("");
       String summary = "";
       summary += String.format(
-            "Account holder is %s; Account number is %s; Account type is %s;",
-            holdername, accountNum, type);
-      
-//      summary += String.format(
-//            "Account balance is %f", getAccountBalance());
+            "Account holder is %s; Account number is %s; "
+                  + "Account type is %s; Account balance is %.2f",
+            holdername, accountNum, type, balance); // populate data and round balance
       return summary;
    }
 }

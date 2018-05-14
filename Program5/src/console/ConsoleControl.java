@@ -53,6 +53,12 @@ public class ConsoleControl {
       }
    }
    
+   private int getAccountNuber(Scanner stdin)
+   {
+      String accountNum = (stdin.nextLine());
+      return Integer.parseInt(accountNum);
+   }
+   
    private void createaccount(Scanner stdin)
    {
       String name;
@@ -64,11 +70,9 @@ public class ConsoleControl {
 //      {
          System.out.println("Please enter the name of the customer:");
          name = stdin.nextLine();
-         System.out.println(name);
 
          System.out.println("Please enter the SSN of the customer (***-**-****):");
          ssn = new SSNum(stdin.nextLine());
-         System.out.println(ssn);
          
          System.out.println("Please select account type: 1.Savings, 2.Checking");
          int typei = Integer.parseInt(stdin.nextLine());
@@ -77,26 +81,18 @@ public class ConsoleControl {
          
 
          System.out.println("Please enter account number with five digits:");
-         accountNum = Integer.parseInt(stdin.nextLine());
+         accountNum = getAccountNuber(stdin);
 //      } 
 //      catch(java.util.InputMismatchException e)
 //      {
 //            
 //      }
 
-      bankdata.createNewAccount(name, ssn, type, accountNum);
+      main.Account added = bankdata.createNewAccount(name, ssn, type, accountNum);
       
       
       System.out.println("The new account has been created. Account summary:");
-//      System.out.println(String.format(
-//            "Account holder is %s; Account number is %n; Account type is %s;"
-//            account.name(), account.number, account.type)));
-
-      System.out.println(account.accountsummary());
-   
-         
-      System.out.println(String.format(
-            "Account balance is %f", account.getAccountBalance()));
+      System.out.println(added.getAccountSummary());
    }
    
    private void manageaccount(Scanner stdin)
@@ -107,6 +103,9 @@ public class ConsoleControl {
          return;
       }
       
+      System.out.println("Please enter your account number:");
+      int accountNumber = getAccountNuber(stdin);
+      
       System.out.println("Please select account type: "
             + "1.View account summary, "
             + "2.Withdraw, 3.Deposit, "
@@ -115,7 +114,7 @@ public class ConsoleControl {
       int cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
       switch (cmd) {
          case 1: // View account summary
-            printSummary();
+            bankdata.findAccount(accountNumber).getAccountSummary();
             break;
          case 2: // Withdraw
             Withdraw;
