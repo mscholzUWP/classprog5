@@ -121,18 +121,18 @@ public class BankAccountManagement {
    private void insertionSortInArrayList(ArrayList<Account> list)
    {
       int top = accountlist.size();
+      
       for(int i = 0; i < top; i++)
       {
          // find min value in array
          int leastindex = i;
-         for(int j = i; j < (top - 1); j++)
+         for(int j = i; j < (top); j++)
          {
             if(list.get(leastindex).compareTo(list.get(j)) == 1)
             {
                leastindex = j;
             }
          }
-         
          // swap least with index i 
          Account temp = list.get(i);
          list.set(i, list.get(leastindex));

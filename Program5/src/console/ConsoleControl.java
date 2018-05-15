@@ -200,7 +200,7 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-      ScannerInputByFile("testinput2.txt");
+      ScannerInputByFile("testinput3.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())
