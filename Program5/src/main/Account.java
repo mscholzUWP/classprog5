@@ -38,6 +38,7 @@ public abstract class Account implements Comparable{
    
    
    public abstract float getAccountBalance();
+   public abstract float addMonthlyInterest();
 
    public Account(int accountNum)
    {
@@ -52,9 +53,11 @@ public abstract class Account implements Comparable{
    
    public boolean withdraw(float amount)
    {
+      System.out.println("bal1"+balance);
       if (balance >= amount)
       {
          balance -= amount;
+         System.out.println("balw"+balance);
          return true;
       }
       return false;
@@ -77,17 +80,24 @@ public abstract class Account implements Comparable{
       {
          throw new NullPointerException("test is null");
       }
+      Account testa = (Account)test;
       //if (test instanceof Account)
       
-      if (this.balance == test.balance )
+      if (this.balance == testa.balance )
+      {
          return 0; 
-      
-      if (this.balance > test.balance )
+      }
+
+      if (this.balance > testa.balance )
+      {
          return 1; 
+      }
       
-      if (this.balance < test.balance )
+      if (this.balance < testa.balance )
+      {
          return -1; 
-      
+      }
+
       throw new NullPointerException("not greater,equal,lessthan");
    }
    

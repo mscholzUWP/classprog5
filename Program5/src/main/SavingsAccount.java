@@ -11,7 +11,7 @@ package main;
  * @author scholzm
  */
 public class SavingsAccount extends Account{
-   private float annualInterestRate = 0.01f;
+   private float annualInterestRate = 0.005f;
    
    
    public SavingsAccount(int id)
@@ -20,8 +20,20 @@ public class SavingsAccount extends Account{
       type = Account.AccountType.SAVINGS;
    }
    
+   //@override
+   public boolean withdraw(float amount)
+   {
+      if (balance >= amount)
+      {
+         balance -= amount;
+         return true;
+      }
+      return false;
+   }
+   
    public float getAccountBalance()
    {
+      //addMonthlyInterest();
       return balance;
    }
    
@@ -31,5 +43,9 @@ public class SavingsAccount extends Account{
       return balance; // could be very wrong
    }
    
-   //public String getAccountSummary()
+   public String getAccountSummary()
+   {
+      //addMonthlyInterest();
+      return super.getAccountSummary();
+   }
 }

@@ -69,8 +69,8 @@ public class ConsoleControl {
       main.Account.AccountType type;
       int accountNum;
       
-//      try
-//      {
+      try
+      {
          System.out.println("Please enter the name of the customer:");
          name = stdin.nextLine();
 
@@ -85,11 +85,11 @@ public class ConsoleControl {
 
          System.out.println("Please enter account number with five digits:");
          accountNum = getAccountNuber(stdin);
-//      } 
-//      catch(java.util.InputMismatchException e)
-//      {
-//            
-//      }
+      } 
+      catch(java.util.InputMismatchException e)
+      {
+          throw e;  
+      }
 
       main.Account added = bankdata.createNewAccount(name, ssn, type, accountNum);
       
@@ -107,11 +107,13 @@ public class ConsoleControl {
       }
       
       float amount =  Float.parseFloat(stdin.nextLine().trim());
-      boolean success = manacc.deposit(amount);
+      boolean success = manacc.withdraw(amount);
       if (success)
       {
-         System.out.println("Your withdrawal has been accepted with an amount of " + amount);
-      }else
+         System.out.println(String.format(
+               "Your withdrawal has been accepted with an amount of %.2f", amount));
+      }
+      else
       {
          System.out.println("transaction failed");
       }
@@ -124,8 +126,10 @@ public class ConsoleControl {
       boolean success = manacc.deposit(amount);
       if (success)
       {
-         System.out.println("Your deposit has been received with an amount of " + amount);
-      }else
+         System.out.println(String.format(
+               "Your deposit has been accepted with an amount of %.2f", amount));
+      }
+      else
       {
          System.out.println("transaction failed");
       }
@@ -174,12 +178,12 @@ public class ConsoleControl {
       int numaccounts = bankdata.numAccounts();
       System.out.println("The total number of accounts is " + numaccounts);
       ArrayList<main.Account> accounts = bankdata.sortAccounts();
-//      System.out.println(accounts);
-//      System.out.println("asize = "+accounts.size());
       Iterator<main.Account> accitr = accounts.iterator();
       while (accitr.hasNext()) 
       {
-         System.out.println(accitr.next().getAccountSummary());
+         Account next = accitr.next();
+         next.addMonthlyInterest();
+         System.out.println(next.getAccountSummary());
       }
    }
    
@@ -197,24 +201,24 @@ public class ConsoleControl {
                + "balance from lowest to highest, "
                + "Q to quit");
       
-      String cmd = stdin.nextLine().trim();// get rid of spaces and newline 
+         String cmd = stdin.nextLine().trim();// get rid of spaces and newline 
 
-      switch (cmd.toUpperCase()) {
-         case "C":
-            createaccount(stdin);
-            break;
-         case "M":
-            manageaccount(stdin);
-            break;
-         case "L":
-            listaccounts(stdin);
-            break;
-         case "Q":
-            System.out.println("Thanks for using Banking System. Bye!");
-            break;
-         default:
-            System.out.println("bad command" + cmd);
-            break;
+         switch (cmd.toUpperCase()) {
+            case "C":
+               createaccount(stdin);
+               break;
+            case "M":
+               manageaccount(stdin);
+               break;
+            case "L":
+               listaccounts(stdin);
+               break;
+            case "Q":
+               System.out.println("Thanks for using Banking System. Bye!");
+               break;
+            default:
+               System.out.println("bad command" + cmd);
+               break;
          } 
       }
    }  

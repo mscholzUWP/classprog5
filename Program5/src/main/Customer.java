@@ -14,7 +14,7 @@ public class Customer {
 //    Social Security Number (SSN) is the unique identifier of customers. 
 //            When opening an account, check if a customer has already existed, 
 //            if so, associate the new account to the customer. 
-//            􀀬􀁗􀂶􀁖􀀃􀁌􀁏􀁏􀁈􀁊􀁄􀁏􀀃􀁗􀁒􀀃􀁋􀁄􀁙􀁈􀀃two customers with 
+//            two customers with 
 //            the same SSN in the customer list.
     
    private SSNum ssn;

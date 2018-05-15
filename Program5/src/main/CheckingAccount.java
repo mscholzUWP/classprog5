@@ -24,5 +24,10 @@ public class CheckingAccount extends Account{
       return balance;
    }
    
+   public float addMonthlyInterest()
+   {
+      return balance;
+   }
+   
    //public String getAccountSummary()
 }

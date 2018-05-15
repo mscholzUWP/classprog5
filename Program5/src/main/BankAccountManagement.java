@@ -9,6 +9,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ListIterator;
+import java.lang.IllegalStateException;
 
 
 
@@ -96,7 +97,8 @@ public class BankAccountManagement {
       }
       else
       {
-         throw java.lang.Exception("somthing went wrong");
+         //throw java.lang.IllegalStateException("somthing went wrong");
+         throw new NullPointerException("somthing went wrong");
       }
       
       toAdd.setHolderName(name);
@@ -116,7 +118,7 @@ public class BankAccountManagement {
       return accountlist;
    }
    
-   private void insertionSortInArrayList(ArrayList list)
+   private void insertionSortInArrayList(ArrayList<Account> list)
    {
       int top = accountlist.size();
       for(int i = 0; i < top; i++)
@@ -132,7 +134,7 @@ public class BankAccountManagement {
          }
          
          // swap least with index i 
-         Object temp = list.get(i);
+         Account temp = list.get(i);
          list.set(i, list.get(leastindex));
          list.set(leastindex, temp);
       }
