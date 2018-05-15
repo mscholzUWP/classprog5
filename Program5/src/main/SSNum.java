@@ -23,19 +23,29 @@ public class SSNum {
 
    public SSNum(String ssntext)
    {// parse string as ssn input. example "123-45-1111" 
+      
+      if(ssntext.length() != 11)
+      {
+         throw new java.lang.IllegalArgumentException("The length of ssn has to be 11.");
+      }
+      if(ssntext.length() != 11)
+      {
+         throw new java.lang.IllegalArgumentException("The length of ssn has to be 11.");
+      }
+      
       StringTokenizer ssntok = new StringTokenizer(ssntext, "-");
       String token;
       
       token = ssntok.nextToken();
-      if (token.length() != 3) { throw new IllegalArgumentException();}
+      if (token.length() != 3) { throw new IllegalArgumentException("wrong format");}
       num1 = Integer.parseInt(token);
       
       token = ssntok.nextToken();
-      if (token.length() != 2) { throw new IllegalArgumentException();}
+      if (token.length() != 2) { throw new IllegalArgumentException("wrong format");}
       num2 = Integer.parseInt(token);
       
       token = ssntok.nextToken();
-      if (token.length() != 4) { throw new IllegalArgumentException();}
+      if (token.length() != 4) { throw new IllegalArgumentException("wrong format");}
       num3 = Integer.parseInt(token);
    }
 

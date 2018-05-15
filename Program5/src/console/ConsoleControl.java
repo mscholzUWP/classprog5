@@ -60,7 +60,18 @@ public class ConsoleControl {
    private int getAccountNuber(Scanner stdin)
    {
       String accountNum = (stdin.nextLine());
-      return Integer.parseInt(accountNum);
+//      if (accountNum.length() != 5)
+//         {throw new java.util.InputMismatchException();}
+      int anum;
+      try
+      {
+      anum = Integer.parseInt(accountNum);
+      }
+      catch(java.lang.NumberFormatException e)
+      {
+         throw new java.util.InputMismatchException();
+      }
+      return anum;
    }
    
    private void createaccount(Scanner stdin)
@@ -76,29 +87,74 @@ public class ConsoleControl {
          name = stdin.nextLine();
 
          System.out.println("Please enter the SSN of the customer (***-**-****):");
-         ssn = new SSNum(stdin.nextLine());
-         
+         while(true) 
+         {
+            try
+               {
+                  ssn = new SSNum(stdin.nextLine());
+                  break;
+               }
+               catch(java.lang.IllegalArgumentException e)
+               {
+                  System.out.println(String.format("Invalid Social Security Number. %s", e));
+                  System.out.println("Please enter valid SSN:");
+               }
+         }
          System.out.println("Please select account type: 1.Savings, 2.Checking");
-         int typei = Integer.parseInt(stdin.nextLine());
-         if (typei != 1 && typei != 2){throw new IllegalArgumentException();}
-         //type = main.Account.AccountType.byInput(typei); // convert int into enum
-         if (typei == 1 )
+         while(true)
          {
-            type = main.Account.AccountType.SAVINGS;
+            try
+            {
+               int typei;
+               try
+               {
+                  typei = Integer.parseInt(stdin.nextLine());
+               }
+               catch(java.lang.NumberFormatException e)
+               {
+                  throw new java.util.InputMismatchException();
+               }
+               
+               if (typei != 1 && typei != 2){throw new java.lang.IllegalArgumentException();}
+               //type = main.Account.AccountType.byInput(typei); // convert int into enum
+               if (typei == 1 )
+               {
+                  type = main.Account.AccountType.SAVINGS;
+               }
+               else if (typei == 2 )
+               {
+                  type = main.Account.AccountType.CHECKING;
+               }
+               else 
+               {
+                  throw new java.lang.IllegalArgumentException();
+               }
+               break;
+            }
+            catch(java.util.InputMismatchException e)
+            {
+               System.out.println(String.format("Invalid Input. %s Please try again", e));
+            }
+            catch(java.lang.IllegalArgumentException e)
+            {
+               System.out.println(String.format("Invalid Input. Please try again"));
+            }
+
          }
-         else if (typei == 2 )
-         {
-            type = main.Account.AccountType.CHECKING;
-         }
-         else 
-         {
-            // can't find symbol?
-            //throw java.util.InputMismatchException();
-         }
-         
 
          System.out.println("Please enter account number with five digits:");
-         accountNum = getAccountNuber(stdin);
+         while(true)
+         {
+            try
+            {
+               accountNum = getAccountNuber(stdin);
+               break;
+            }
+            catch(java.util.InputMismatchException e)
+            {
+               System.out.println(String.format("Invalid Input. %s Please try again", e));
+            }
+         }
       } 
       catch(java.util.InputMismatchException e)
       {
@@ -156,7 +212,20 @@ public class ConsoleControl {
       }
       
       System.out.println("Please enter your account number:");
-      int accountNumber = getAccountNuber(stdin);
+      int accountNumber;
+      while(true)
+      {
+         try
+         {
+            accountNumber = getAccountNuber(stdin);
+            break;
+         }
+         catch(java.lang.NumberFormatException e)
+         {
+            System.out.println();
+         }
+      }
+      
       main.Account manacc = bankdata.findAccount(accountNumber);
       
       System.out.println("Please select account type: "
@@ -164,7 +233,16 @@ public class ConsoleControl {
             + "2.Withdraw, 3.Deposit, "
             + "4.Main menu");
       
-      int cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
+      int cmd;    
+      try
+      {
+         cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
+      }
+      catch(java.lang.NumberFormatException e)
+      {
+         throw new java.util.InputMismatchException();
+      }
+      
       switch (cmd) {
          case 1: // View account summary
             manacc.getAccountSummary();
@@ -200,7 +278,7 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-      ScannerInputByFile("testinput3.txt");
+      ScannerInputByFile("testinput2.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())
