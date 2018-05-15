@@ -60,8 +60,6 @@ public class ConsoleControl {
    private int getAccountNuber(Scanner stdin)
    {
       String accountNum = (stdin.nextLine());
-//      if (accountNum.length() != 5)
-//         {throw new java.util.InputMismatchException();}
       int anum;
       try
       {
@@ -71,6 +69,11 @@ public class ConsoleControl {
       {
          throw new java.util.InputMismatchException();
       }
+      if (accountNum.length() != 5)
+      {
+         throw new java.lang.IllegalArgumentException();
+      }
+      
       return anum;
    }
    
@@ -154,6 +157,10 @@ public class ConsoleControl {
             {
                System.out.println(String.format("Invalid Input. %s Please try again", e));
             }
+            catch(java.lang.IllegalArgumentException e)
+            {
+               System.out.println(String.format("Invalid Input. Please try again"));
+            }
          }
       } 
       catch(java.util.InputMismatchException e)
@@ -174,8 +181,29 @@ public class ConsoleControl {
          System.out.println("The balance is 0.0, Please deposit before withdraw.");
          return;
       }
+      System.out.println("Please enter the amount of money:");
       
-      float amount =  Float.parseFloat(stdin.nextLine().trim());
+      float amount;
+      while(true)
+      {
+         try
+         {
+            try
+            {
+               amount =  Float.parseFloat(stdin.nextLine().trim());
+               break;
+            }
+            catch(java.lang.NumberFormatException e)
+            {
+               throw new java.util.InputMismatchException();
+            }
+         }
+         catch(java.util.InputMismatchException e)
+         {
+            System.out.println(String.format("Invalid Input. %s Please try again", e));
+         }
+      }
+      
       boolean success = manacc.withdraw(amount);
       if (success)
       {
@@ -190,7 +218,29 @@ public class ConsoleControl {
    
    private void deposit(Scanner stdin, main.Account manacc)
    {
-      float amount =  Float.parseFloat(stdin.nextLine().trim());
+      System.out.println("Please enter the amount of money:");
+      
+      float amount;
+      while(true)
+      {
+         try
+         {
+            try
+            {
+               amount =  Float.parseFloat(stdin.nextLine().trim());
+               break;
+            }
+            catch(java.lang.NumberFormatException e)
+            {
+               throw new java.util.InputMismatchException();
+            }
+         }
+         catch(java.util.InputMismatchException e)
+         {
+            System.out.println(String.format("Invalid Input. %s Please try again", e));
+         }
+      }
+      
       boolean success = manacc.deposit(amount);
       if (success)
       {
@@ -228,19 +278,25 @@ public class ConsoleControl {
       
       main.Account manacc = bankdata.findAccount(accountNumber);
       
-      System.out.println("Please select account type: "
-            + "1.View account summary, "
-            + "2.Withdraw, 3.Deposit, "
-            + "4.Main menu");
+
       
-      int cmd;    
-      try
+      int cmd; 
+      while(true)
       {
-         cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
-      }
-      catch(java.lang.NumberFormatException e)
-      {
-         throw new java.util.InputMismatchException();
+         System.out.println("Please select account type: "
+               + "1.View account summary, "
+               + "2.Withdraw, 3.Deposit, "
+               + "4.Main menu");
+         
+         try
+         {
+            cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
+            break;
+         }
+         catch(java.lang.NumberFormatException e)
+         {
+            System.out.println("Invalid command.");
+         }
       }
       
       switch (cmd) {
@@ -278,7 +334,7 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-      ScannerInputByFile("testinput2.txt");
+      ScannerInputByFile("testinput3.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())
@@ -306,7 +362,8 @@ public class ConsoleControl {
                System.out.println("Thanks for using Banking System. Bye!");
                break;
             default:
-               System.out.println("bad command" + cmd);
+               //System.out.println("Invalid command.");
+               System.out.println("Invalid command: " + cmd);
                break;
          } 
       }
