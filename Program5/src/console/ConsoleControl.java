@@ -212,7 +212,7 @@ public class ConsoleControl {
       }
       else
       {
-         System.out.println("transaction failed");
+         System.out.println("You don't have enough balance. Please try a different amount.");
       }
    }
    
@@ -262,60 +262,71 @@ public class ConsoleControl {
       }
       
       System.out.println("Please enter your account number:");
-      int accountNumber;
+      main.Account manacc;
       while(true)
       {
          try
          {
-            accountNumber = getAccountNuber(stdin);
-            break;
+            int accountNumber = getAccountNuber(stdin);
+            
+            manacc = bankdata.findAccount(accountNumber);
+            if (manacc == null)
+            {
+               System.out.println("The account number you entered does not exist. Please try again");
+               continue; // go back to while beginning
+            }
+            else
+            {
+               break;
+            }
+            
          }
-         catch(java.lang.NumberFormatException e)
+         catch(java.util.InputMismatchException e)
          {
-            System.out.println();
+            System.out.println(String.format("Invalid Input. %s Please try again", e));
+         }
+         catch(java.lang.IllegalArgumentException e)
+         {
+            System.out.println(String.format("Invalid Input. Please try again"));
          }
       }
       
-      main.Account manacc = bankdata.findAccount(accountNumber);
       
-
+      System.out.println("Please select account type: "
+            + "1.View account summary, "
+            + "2.Withdraw, 3.Deposit, "
+            + "4.Main menu");
       
       int cmd; 
       while(true)
       {
-         System.out.println("Please select account type: "
-               + "1.View account summary, "
-               + "2.Withdraw, 3.Deposit, "
-               + "4.Main menu");
-         
          try
          {
             cmd = Integer.parseInt(stdin.nextLine().trim());// get rid of spaces and newline 
-            break;
          }
          catch(java.lang.NumberFormatException e)
-         {
-            System.out.println("Invalid command.");
+         {  // naughty, but why have us convert numberformat exceptions into 
+            //      input mismatch exceptions and then display them. really?
+            System.out.println("Invalid Input. java.util.InputMismatchException Please try again");
+            continue;
          }
-      }
-      
-      switch (cmd) {
-         case 1: // View account summary
-            manacc.getAccountSummary();
-            return;
-         case 2: // Withdraw
-            withdraw(stdin, manacc);
-            return;
-         case 3: // Deposit
-            deposit(stdin, manacc);
-            return;
-         case 4: // Main menu
-            return;
-         default:
-            System.out.println("bad command" + cmd);
-            break;
-      }
-      
+         switch (cmd) {
+            case 1: // View account summary
+               manacc.getAccountSummary();
+               return;
+            case 2: // Withdraw
+               withdraw(stdin, manacc);
+               return;
+            case 3: // Deposit
+               deposit(stdin, manacc);
+               return;
+            case 4: // Main menu
+               return;
+            default:
+               System.out.println("Invalid type. Please try again");
+               continue;
+         }
+      } 
    }
       
    private void listaccounts(Scanner stdin)
@@ -334,7 +345,7 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-      ScannerInputByFile("testinput3.txt");
+      ScannerInputByFile("testinput2.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())
@@ -362,8 +373,8 @@ public class ConsoleControl {
                System.out.println("Thanks for using Banking System. Bye!");
                break;
             default:
-               //System.out.println("Invalid command.");
-               System.out.println("Invalid command: " + cmd);
+               System.out.println("Invalid command.");
+               //System.out.println("Invalid command: " + cmd);
                break;
          } 
       }
