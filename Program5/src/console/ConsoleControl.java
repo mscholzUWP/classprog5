@@ -8,6 +8,7 @@ package console;
 import main.BankAccountManagement;
 import main.SSNum;
 import java.io.File;
+
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class ConsoleControl {
    {
       String name;
       SSNum ssn;
-      main.Account.AccountType type;
+      main.Account.AccountType type = null;
       int accountNum;
       
       try
@@ -80,7 +81,20 @@ public class ConsoleControl {
          System.out.println("Please select account type: 1.Savings, 2.Checking");
          int typei = Integer.parseInt(stdin.nextLine());
          if (typei != 1 && typei != 2){throw new IllegalArgumentException();}
-         type = main.Account.AccountType.values()[typei]; // convert int into enum
+         //type = main.Account.AccountType.byInput(typei); // convert int into enum
+         if (typei == 1 )
+         {
+            type = main.Account.AccountType.SAVINGS;
+         }
+         else if (typei == 2 )
+         {
+            type = main.Account.AccountType.CHECKING;
+         }
+         else 
+         {
+            // can't find symbol?
+            //throw java.util.InputMismatchException();
+         }
          
 
          System.out.println("Please enter account number with five digits:");
@@ -92,8 +106,7 @@ public class ConsoleControl {
       }
 
       main.Account added = bankdata.createNewAccount(name, ssn, type, accountNum);
-      
-      
+
       System.out.println("The new account has been created. Account summary:");
       System.out.println(added.getAccountSummary());
    }
@@ -117,7 +130,6 @@ public class ConsoleControl {
       {
          System.out.println("transaction failed");
       }
-      
    }
    
    private void deposit(Scanner stdin, main.Account manacc)
@@ -146,7 +158,6 @@ public class ConsoleControl {
       System.out.println("Please enter your account number:");
       int accountNumber = getAccountNuber(stdin);
       main.Account manacc = bankdata.findAccount(accountNumber);
-      
       
       System.out.println("Please select account type: "
             + "1.View account summary, "
@@ -189,7 +200,7 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-      ScannerInputByFile("testinput1.txt");
+      ScannerInputByFile("testinput2.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())

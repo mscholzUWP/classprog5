@@ -17,8 +17,8 @@ public abstract class Account implements Comparable{
    protected float balance;
    
    public enum AccountType {
-      CHECKING(1, "checking"), 
-      SAVINGS(2,"savings");
+      CHECKING(2, "checking"), 
+      SAVINGS(1,"savings");
       
       private int value;
       private String name;
@@ -30,6 +30,18 @@ public abstract class Account implements Comparable{
       public String toString()
       {
          return name;
+      }
+      // get enum by passing in it's type #
+      public AccountType byInput(int type)
+      {
+         for(int i =0; i < this.values().length; i++)
+         {
+            if(this.values()[i].value == type)
+            {
+               return this.values()[i];
+            }
+         }
+         return null;
       }
    }
    
@@ -53,11 +65,9 @@ public abstract class Account implements Comparable{
    
    public boolean withdraw(float amount)
    {
-      System.out.println("bal1"+balance);
       if (balance >= amount)
       {
          balance -= amount;
-         System.out.println("balw"+balance);
          return true;
       }
       return false;

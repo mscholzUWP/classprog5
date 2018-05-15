@@ -65,7 +65,7 @@ public class BankAccountManagement {
       while (itr.hasNext())
       {
          Account test = itr.next();
-         if(test.equals(accountNum));
+         if(test.equals(accountNum))
          {
             return test;
          }
@@ -125,7 +125,7 @@ public class BankAccountManagement {
       {
          // find min value in array
          int leastindex = i;
-         for(int j = i; i < (top-1); j++)
+         for(int j = i; j < (top - 1); j++)
          {
             if(list.get(leastindex).compareTo(list.get(j)) == 1)
             {
