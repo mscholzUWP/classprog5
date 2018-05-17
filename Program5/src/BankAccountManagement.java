@@ -3,12 +3,6 @@
 @class Cs2430, Spring 2018 
 */
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.ListIterator;
@@ -32,7 +26,12 @@ public class BankAccountManagement {
       customerlist = new ArrayList<Customer>(10);
       accountlist = new ArrayList<Account>(20);
    }
-   
+   /**
+   makes a new customer
+   @param name
+   @param ssn
+   @return customer created
+   */
    public Customer createNewCustomer(String name, SSNum ssn)
    {
       // chack that customer doesn't have identical ssn retuen null;
@@ -46,6 +45,11 @@ public class BankAccountManagement {
       return toAdd;
    }
    
+   /**
+   will return the customer object with specified ssn
+   @param ssn
+   @return 
+   */
    public Customer findCustomer(SSNum ssn)
    {// this should really be a hashmap.
       Iterator<Customer> itr = customerlist.iterator();
@@ -60,7 +64,11 @@ public class BankAccountManagement {
       }
       return null;
    }
-   
+   /**
+   will return the account object with specified id
+   @param accountNum
+   @return 
+   */
    public Account findAccount(int accountNum)
    {// this should really be a hashmap.
       Iterator<Account> itr = accountlist.iterator();
@@ -76,6 +84,15 @@ public class BankAccountManagement {
       return null;
    }
    
+   /**
+   creates a new customer if one with identical ssn does not exist
+   and then creates an account assigned to that person
+   @param name
+   @param ssn
+   @param type
+   @param accountNum
+   @return 
+   */
    public Account createNewAccount(String name, SSNum ssn, Account.AccountType type, int accountNum)
    {
       Customer holder = findCustomer(ssn);
@@ -110,17 +127,20 @@ public class BankAccountManagement {
       return toAdd;
    }
    
-   public void manageAccount()
-   {
-   
-   }
-   
+   /**
+   sorts accounts by balance using selection sort
+   @return 
+   */
    public ArrayList sortAccounts()
    {
       insertionSortInArrayList(accountlist);
       return accountlist;
    }
    
+   /**
+   sorts list by comparable using selectionsort
+   @param list 
+   */
    private void insertionSortInArrayList(ArrayList<Account> list)
    {
       int top = accountlist.size();
@@ -143,23 +163,27 @@ public class BankAccountManagement {
       }
    }
    
+   /**
+   get number of accounts
+   @return 
+   */
    public int numAccounts()
    {
       return accountlist.size();
    }
-   
-   // loads dummmy data for gui testing
-   private void loadDummydata()
-   {
-      
-   }
 
+   /**
+   runs console version of program
+   */
    public void run()
    { // console version
       ConsoleControl textio = new ConsoleControl(this);
       textio.runConsole();
    }
     
+   /**
+   runs gui version of program
+   */
    public void runGUI()
    { // gui version
       loadDummydata();

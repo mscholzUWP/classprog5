@@ -13,7 +13,10 @@
 public class SavingsAccount extends Account{
    private float annualInterestRate = 0.005f;
    
-   
+   /**
+   constructor
+   @param id unique id for account
+   */
    public SavingsAccount(int id)
    {
       super(id);
@@ -21,6 +24,9 @@ public class SavingsAccount extends Account{
    }
    
    //@override
+   /**
+   @return balance of account
+   */
    public boolean withdraw(float amount)
    {
       if (balance >= amount)
@@ -30,28 +36,33 @@ public class SavingsAccount extends Account{
       }
       return false;
    }
-   
+   /**
+   adds amount to balance
+   @param amount
+   @return 
+   */
    public boolean deposit(float amount)
    {
       balance += amount;
       return false; // can this ever be false?
    }
-   
+   /**
+   @return balance of account
+   */
    public float getAccountBalance()
    {
       //addMonthlyInterest();
       return balance;
    }
    
+   /**
+   adds interest to account balance
+   @return balance
+   */
    public float addMonthlyInterest()
    {
       balance = balance + balance*annualInterestRate;
       return balance; // could be very wrong
    }
    
-   public String getAccountSummary()
-   {
-      //addMonthlyInterest();
-      return super.getAccountSummary();
-   }
 }

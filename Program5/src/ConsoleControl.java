@@ -52,7 +52,11 @@ public class ConsoleControl {
          return;
       }
    }
-   
+   /**
+   grabs valid account number from stdin
+   @param stdin
+   @return 
+   */
    private int getAccountNuber(Scanner stdin)
    {
       String accountNum = (stdin.nextLine());
@@ -73,6 +77,10 @@ public class ConsoleControl {
       return anum;
    }
    
+   /**
+   user interface to create a new account
+   @param stdin 
+   */
    private void createaccount(Scanner stdin)
    {
       String name;
@@ -170,6 +178,11 @@ public class ConsoleControl {
       System.out.println(added.getAccountSummary());
    }
    
+   /**
+   user interface to withdraw money
+   @param stdin
+   @param manacc 
+   */
    private void withdraw(Scanner stdin, Account manacc)
    {
       if (manacc.getAccountBalance() == 0)
@@ -212,6 +225,12 @@ public class ConsoleControl {
       }
    }
    
+   /**
+   user interface to deposit money
+   @param stdin
+   @param manacc 
+   */
+
    private void deposit(Scanner stdin, Account manacc)
    {
       System.out.println("Please enter the amount of money:");
@@ -250,6 +269,10 @@ public class ConsoleControl {
       }
    }
    
+   /**
+   user interface to manage their account/s
+   @param stdin 
+   */
    private void manageaccount(Scanner stdin)
    {
       if (bankdata.numAccounts() == 0)
@@ -326,6 +349,11 @@ public class ConsoleControl {
       } 
    }
       
+   /**
+   prints out a list of accounts sorted by balance. 
+   also increments savingsaccount interest
+   @param stdin 
+   */
    private void listaccounts(Scanner stdin)
    {
       int numaccounts = bankdata.numAccounts();
@@ -340,6 +368,9 @@ public class ConsoleControl {
       }
    }
    
+   /**
+   main menu for command line interface
+   */
    public void runConsole()
    {
       ScannerInputByFile("testinput3.txt");

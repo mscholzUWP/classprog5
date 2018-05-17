@@ -26,16 +26,26 @@ public class Customer {
       this.ssn = ssn;
    }
    
-   public boolean addAccount(Account toAdd)
-   {
-      return false;
-   }
+   /**
    
-   public ArrayList<Account> getAccountList()
-   {
-      return null;
-   }
+   @param toAdd
+   @return 
+   */
+//   public boolean addAccount(Account toAdd)
+//   {
+//      return false;
+//   }
+   
+//   public ArrayList<Account> getAccountList()
+//   {
+//      return null;
+//   }
 
+   /**
+   checks if test equals customer ssn
+   @param test
+   @return 
+   */
    public boolean equals(Object test)
    { // tests if same ssn.
       if(test instanceof Customer)

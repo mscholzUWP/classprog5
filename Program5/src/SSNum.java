@@ -13,7 +13,11 @@ public class SSNum {
    int num2;// 2 digits
    int num3;// 4 digits
 
-
+   /**
+   constructor
+   parses a ssn string into usable ssn
+   @param ssntext 
+   */
    public SSNum(String ssntext)
    {// parse string as ssn input. example "123-45-1111" 
       if(ssntext.length() != 11)
@@ -49,11 +53,21 @@ public class SSNum {
          {throw new IllegalArgumentException("wrong format");}
    }
 
+   /**
+   returns a string identical to the format 
+   of the string used to create the ssn.
+   @return 
+   */
    public String toString()
    {
        return String.format("%1$s-%2$s-%3$s", num1, num2, num3);
    }
    
+   /**
+   checks if test ssn equals this ssn
+   @param test
+   @return 
+   */
    public boolean equals(SSNum test)
    {
       return(this.num1 == test.num1 &&

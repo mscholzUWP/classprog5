@@ -46,18 +46,30 @@ public abstract class Account implements Comparable{
    public abstract float getAccountBalance();
    public abstract float addMonthlyInterest();
 
+   /**
+   constructor
+   @param accountNum unique id for account
+   */
    public Account(int accountNum)
    {
       this.accountNum = accountNum;
       balance = 0;
       totalAccountNumber++;
    }
-   
+   /**
+   sets the name of the account holder
+   @param holdername 
+   */
    public void setHolderName(String holdername)
    {
       this.holdername = holdername;
    }
    
+   /**
+   deducts amount from balance if there is enough money
+   @param amount
+   @return successful
+   */
    public boolean withdraw(float amount)
    {
       if (balance >= amount)
@@ -68,13 +80,23 @@ public abstract class Account implements Comparable{
       return false;
    }
    
+   /**
+   adds amount to balance
+   @param amount
+   @return 
+   */
    public boolean deposit(float amount)
    {
       balance += amount;
       return true; // can this ever be false?
    }
 
-   // comperable interface
+   
+   /**
+   comparable interface
+   @param test
+   @return -1,0,1
+   */
    public int compareTo(Object test)
    {
       if(!(test instanceof Account))
@@ -106,6 +128,11 @@ public abstract class Account implements Comparable{
       throw new NullPointerException("not greater,equal,lessthan");
    }
    
+   /**
+   equals interface
+   @param test
+   @return bool isequals
+   */
    public boolean equals(Object test)
    {
       if(test instanceof Account)
@@ -119,6 +146,10 @@ public abstract class Account implements Comparable{
       return false;
    }
    
+   /**
+   summarises account info
+   @return 
+   */
    public String getAccountSummary()
    {
       //return String.format("");
