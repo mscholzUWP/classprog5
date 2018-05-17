@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package console;
 
-import main.BankAccountManagement;
-import main.SSNum;
+
+
 import java.io.File;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.Iterator;
-import main.Account;
-import main.Customer;
 
 /**
  *
@@ -81,7 +78,7 @@ public class ConsoleControl {
    {
       String name;
       SSNum ssn;
-      main.Account.AccountType type = null;
+      Account.AccountType type = null;
       int accountNum;
       
       try
@@ -122,11 +119,11 @@ public class ConsoleControl {
                //type = main.Account.AccountType.byInput(typei); // convert int into enum
                if (typei == 1 )
                {
-                  type = main.Account.AccountType.SAVINGS;
+                  type = Account.AccountType.SAVINGS;
                }
                else if (typei == 2 )
                {
-                  type = main.Account.AccountType.CHECKING;
+                  type = Account.AccountType.CHECKING;
                }
                else 
                {
@@ -168,13 +165,13 @@ public class ConsoleControl {
           throw e;  
       }
 
-      main.Account added = bankdata.createNewAccount(name, ssn, type, accountNum);
+      Account added = bankdata.createNewAccount(name, ssn, type, accountNum);
 
       System.out.println("The new account has been created. Account summary:");
       System.out.println(added.getAccountSummary());
    }
    
-   private void withdraw(Scanner stdin, main.Account manacc)
+   private void withdraw(Scanner stdin, Account manacc)
    {
       if (manacc.getAccountBalance() == 0)
       {
@@ -216,7 +213,7 @@ public class ConsoleControl {
       }
    }
    
-   private void deposit(Scanner stdin, main.Account manacc)
+   private void deposit(Scanner stdin, Account manacc)
    {
       System.out.println("Please enter the amount of money:");
       
@@ -262,7 +259,7 @@ public class ConsoleControl {
       }
       
       System.out.println("Please enter your account number:");
-      main.Account manacc;
+      Account manacc;
       while(true)
       {
          try
@@ -333,8 +330,8 @@ public class ConsoleControl {
    {
       int numaccounts = bankdata.numAccounts();
       System.out.println("The total number of accounts is " + numaccounts);
-      ArrayList<main.Account> accounts = bankdata.sortAccounts();
-      Iterator<main.Account> accitr = accounts.iterator();
+      ArrayList<Account> accounts = bankdata.sortAccounts();
+      Iterator<Account> accitr = accounts.iterator();
       while (accitr.hasNext()) 
       {
          Account next = accitr.next();
@@ -345,7 +342,7 @@ public class ConsoleControl {
    
    public void runConsole()
    {
-      ScannerInputByFile("testinput2.txt");
+      ScannerInputByFile("testinput3.txt");
       System.out.println("Banking System is running...!");
       
       while(stdin.hasNext())

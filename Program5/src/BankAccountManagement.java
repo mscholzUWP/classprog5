@@ -1,4 +1,4 @@
-package main;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -153,7 +153,7 @@ public class BankAccountManagement {
 
    public void run()
    { // console version
-      console.ConsoleControl textio = new console.ConsoleControl(this);
+      ConsoleControl textio = new ConsoleControl(this);
       textio.runConsole();
    }
     

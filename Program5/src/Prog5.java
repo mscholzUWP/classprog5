@@ -1,5 +1,4 @@
 
-import main.BankAccountManagement;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,7 +19,7 @@ public class Prog5
    public static void main(String[] args)
    {
       // TODO code application logic here
-      main.BankAccountManagement bank = new main.BankAccountManagement();
+      BankAccountManagement bank = new BankAccountManagement();
       bank.run();     
    }  
 }
