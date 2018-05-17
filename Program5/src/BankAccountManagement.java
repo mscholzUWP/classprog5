@@ -184,9 +184,8 @@ public class BankAccountManagement {
    /**
    runs gui version of program
    */
-   public void runGUI()
-   { // gui version
-      loadDummydata();
-      // load / run gui
-   }
+//   public void runGUI()
+//   { // gui version
+//      // load / run gui
+//   }
 }
