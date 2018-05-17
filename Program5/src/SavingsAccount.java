@@ -1,4 +1,4 @@
-package main;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -29,6 +29,12 @@ public class SavingsAccount extends Account{
          return true;
       }
       return false;
+   }
+   
+   public boolean deposit(float amount)
+   {
+      balance += amount;
+      return false; // can this ever be false?
    }
    
    public float getAccountBalance()

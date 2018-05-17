@@ -28,20 +28,25 @@ public class SSNum {
       StringTokenizer ssntok = new StringTokenizer(ssntext, "-");
       String token;
       
-      token = ssntok.nextToken();
-      if (token.length() != 3) 
-         { throw new IllegalArgumentException("wrong format");}
-      num1 = Integer.parseInt(token);
-      
-      token = ssntok.nextToken();
-      if (token.length() != 2) 
-         { throw new IllegalArgumentException("wrong format");}
-      num2 = Integer.parseInt(token);
-      
-      token = ssntok.nextToken();
-      if (token.length() != 4) 
-         { throw new IllegalArgumentException("wrong format");}
-      num3 = Integer.parseInt(token);
+      try
+      {
+         token = ssntok.nextToken();
+         if (token.length() != 3) 
+            { throw new IllegalArgumentException("wrong format");}
+         num1 = Integer.parseInt(token);
+
+         token = ssntok.nextToken();
+         if (token.length() != 2) 
+            { throw new IllegalArgumentException("wrong format");}
+         num2 = Integer.parseInt(token);
+
+         token = ssntok.nextToken();
+         if (token.length() != 4) 
+            { throw new IllegalArgumentException("wrong format");}
+         num3 = Integer.parseInt(token);
+      }
+      catch(java.lang.IllegalArgumentException e)
+         {throw new IllegalArgumentException("wrong format");}
    }
 
    public String toString()

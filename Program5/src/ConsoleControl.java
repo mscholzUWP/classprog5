@@ -1,8 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+@author Marshall Scholz
+@class Cs2430, Spring 2018 
+*/
 
 
 
@@ -137,7 +136,7 @@ public class ConsoleControl {
             }
             catch(java.lang.IllegalArgumentException e)
             {
-               System.out.println(String.format("Invalid Input. Please try again"));
+               System.out.println(String.format("Invalid type. Please try again"));
             }
 
          }
@@ -156,7 +155,7 @@ public class ConsoleControl {
             }
             catch(java.lang.IllegalArgumentException e)
             {
-               System.out.println(String.format("Invalid Input. Please try again"));
+               System.out.println(String.format("Invalid account number. Please try again"));
             }
          }
       } 
@@ -246,7 +245,8 @@ public class ConsoleControl {
       }
       else
       {
-         System.out.println("transaction failed");
+         System.out.println(String.format(
+               "Your deposit has been received with an amount of %.2f", amount));
       }
    }
    
@@ -284,7 +284,7 @@ public class ConsoleControl {
          }
          catch(java.lang.IllegalArgumentException e)
          {
-            System.out.println(String.format("Invalid Input. Please try again"));
+            System.out.println(String.format("Invalid number. Please try again"));
          }
       }
       

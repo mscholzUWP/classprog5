@@ -1,10 +1,7 @@
-
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+@author Marshall Scholz
+@class Cs2430, Spring 2018 
+*/
 
 /**
  *
@@ -32,22 +29,19 @@ public abstract class Account implements Comparable{
          return name;
       }
       // get enum by passing in it's type #
-      public AccountType byInput(int type)
-      {
-         for(int i =0; i < this.values().length; i++)
-         {
-            if(this.values()[i].value == type)
-            {
-               return this.values()[i];
-            }
-         }
-         return null;
-      }
+//      public AccountType byInput(int type)
+//      {
+//         for(int i =0; i < this.values().length; i++)
+//         {
+//            if(this.values()[i].value == type)
+//            {
+//               return this.values()[i];
+//            }
+//         }
+//         return null;
+//      }
    }
-   
    AccountType type;
-   //CHECKING("checking"), SAVINGS("savings");
-   
    
    public abstract float getAccountBalance();
    public abstract float addMonthlyInterest();
@@ -58,6 +52,7 @@ public abstract class Account implements Comparable{
       balance = 0;
       totalAccountNumber++;
    }
+   
    public void setHolderName(String holdername)
    {
       this.holdername = holdername;
