@@ -1,6 +1,9 @@
 /**
 @author Marshall Scholz
 @class Cs2430, Spring 2018 
+this project was developed on github
+project page here:
+https://github.com/mscholzUWP/classprog5
 */
 
 import java.util.ArrayList;
